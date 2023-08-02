@@ -1,11 +1,11 @@
 const razorpay_instance = require("../config/razorpay_instance");
-const Payment = require("../models/paymentModel");
+const Payment = require("../models/Payment");
 const crypto = require("crypto");
 const { config } = require("dotenv");
 config({ path: "../.env" });
 
 const checkout = async (req, res) => {
-  console.log("checkout");
+  console.log("checkout",req.body);
   const options = {
     amount: Number(req.body.amount * 100),
     currency: "INR",
@@ -20,6 +20,7 @@ const checkout = async (req, res) => {
 };
 
 const getKey = (req, res) => {
+  console.log('get key')
   const key = process.env.RAZORPAY_API_KEY;
   res.status(200).json({ key });
 };
