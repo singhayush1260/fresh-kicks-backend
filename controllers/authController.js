@@ -17,7 +17,7 @@ const register = async (req, res) => {
     res.status(200).json({ Name, Email, PhoneNumber, token });
   } catch (error) {
     console.log('inside register catch',error.message)
-    res.status(401).json({message:'Invalid Credentials'});
+    res.status(401).json({message:'Some error occurred.'});
   }
 };
 

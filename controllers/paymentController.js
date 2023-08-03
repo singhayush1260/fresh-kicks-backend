@@ -46,7 +46,8 @@ const paymentVarification = async (req, res) => {
       razorpay_signature,
     });
 
-    res.redirect(`http://localhost:5173/paymentsuccessful?reference=${razorpay_payment_id}`);
+    // res.redirect(`http://localhost:5173/paymentsuccessful?reference=${razorpay_payment_id}`);
+    res.redirect(`https://serene-empanada-2dfef2.netlify.app/paymentsuccessful?reference=${razorpay_payment_id}`);
   } 
   else{
     res.status(400).json({ success: false });
